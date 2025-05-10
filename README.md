@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img width="180" height="180" src="https://github.com/CharlieFuu69/RenPy_RhythmBeats/blob/main/icons/llup_icon.png](https://github.com/QuetzalcoutlDev/a-magical-kyoko/blob/master/icon.png">
+  <img width="180" height="180" src="https://github.com/QuetzalcoutlDev/a-magical-kyoko/blob/master/icon.png">
 </p>
 
 <h2 align="center"> A Magical Kyoko
