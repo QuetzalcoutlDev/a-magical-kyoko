@@ -1,0 +1,197 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvgs376nvqiyo"]
+
+[ext_resource type="Script" uid="uid://c2pgm0mmqykhs" path="res://src/game_over.gd" id="1_nc34t"]
+[ext_resource type="Texture2D" uid="uid://cddc844iduwbe" path="res://assets/sprite/kyoko/death/kyoko_death_0001.png" id="2_br28g"]
+[ext_resource type="Texture2D" uid="uid://blff02v5rool2" path="res://assets/sprite/kyoko/death/kyoko_death_0002.png" id="3_4145l"]
+[ext_resource type="Texture2D" uid="uid://cl52wimylm1o7" path="res://assets/sprite/kyoko/death/kyoko_death_0003.png" id="4_d378u"]
+[ext_resource type="Texture2D" uid="uid://7iouptglhc5q" path="res://assets/sprite/kyoko/death/kyoko_death_0004.png" id="5_ot381"]
+[ext_resource type="FontFile" uid="uid://dcrb4to3x8ux6" path="res://assets/fonts/DotGothic16-Regular.ttf" id="6_6fbgq"]
+[ext_resource type="AudioStream" uid="uid://bwup136x0fqiw" path="res://assets/sounds/LoseSound.ogg" id="7_cojwj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qsyf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_br28g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_br28g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_br28g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4145l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d378u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ot381")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ot381")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6la3l"]
+bg_color = Color(0.63, 0.63, 0.63, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g44ei"]
+bg_color = Color(0.603922, 0.427451, 0.627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oedct"]
+bg_color = Color(0.411765, 0.235294, 0.439216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnidg"]
+bg_color = Color(0.513726, 0.294118, 0.545098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="game_over" type="Node2D"]
+script = ExtResource("1_nc34t")
+
+[node name="s" type="AnimatedSprite2D" parent="."]
+position = Vector2(631, 337)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_qsyf0")
+frame_progress = 0.410147
+
+[node name="restart" type="Button" parent="."]
+offset_left = 281.0
+offset_top = 589.0
+offset_right = 582.0
+offset_bottom = 653.0
+theme_override_colors/font_outline_color = Color(0.189481, 0.134011, 0.284702, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_6fbgq")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6la3l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g44ei")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oedct")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rnidg")
+text = "tryAgainButton"
+
+[node name="to_menu" type="Button" parent="."]
+offset_left = 705.0
+offset_top = 589.0
+offset_right = 1006.0
+offset_bottom = 653.0
+theme_override_colors/font_outline_color = Color(0.189481, 0.134011, 0.284702, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("6_6fbgq")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6la3l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g44ei")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oedct")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rnidg")
+text = "toMainMenuBtn"
+
+[node name="game_over_txt" type="Label" parent="."]
+offset_top = 52.0
+offset_right = 1280.0
+offset_bottom = 173.0
+theme_override_colors/font_outline_color = Color(0.189481, 0.134011, 0.284702, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("6_6fbgq")
+theme_override_font_sizes/font_size = 83
+text = "gameOverTitle"
+horizontal_alignment = 1
+
+[node name="scoresTXT" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1112.0
+offset_top = 8.0
+offset_right = 1272.0
+offset_bottom = 82.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+
+[node name="score" type="HBoxContainer" parent="scoresTXT"]
+layout_mode = 2
+
+[node name="txt" type="Label" parent="scoresTXT/score"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.200284, 0.00740009, 0.226933, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("6_6fbgq")
+theme_override_font_sizes/font_size = 24
+text = "scoreTXT"
+horizontal_alignment = 2
+
+[node name="n" type="Label" parent="scoresTXT/score"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.200284, 0.00740009, 0.226933, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("6_6fbgq")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="highscore" type="HBoxContainer" parent="scoresTXT"]
+layout_mode = 2
+
+[node name="txt" type="Label" parent="scoresTXT/highscore"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.200284, 0.00740009, 0.226933, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("6_6fbgq")
+theme_override_font_sizes/font_size = 24
+text = "highscoreTXT"
+horizontal_alignment = 2
+
+[node name="n" type="Label" parent="scoresTXT/highscore"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.200284, 0.00740009, 0.226933, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("6_6fbgq")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="lose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_cojwj")
+autoplay = true
+bus = &"sounds"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="to_menu" to="." method="_on_to_menu_pressed"]

@@ -1,0 +1,1443 @@
+{
+  "firstLayout": "init",
+  "gdVersion": {
+    "build": 222,
+    "major": 5,
+    "minor": 5,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": true,
+    "orientation": "landscape",
+    "packageName": "com.quetzalcoultdev.amagicalkyoko",
+    "pixelsRounding": true,
+    "projectUuid": "33dbb1a5-da85-495f-8472-3894d884aef3",
+    "scaleMode": "nearest",
+    "sizeOnStartupMode": "",
+    "templateSlug": "",
+    "version": "1.0.0",
+    "name": "A Magical Kyoko",
+    "description": "A magical girl who defeats her enemies with love bubbles",
+    "author": "Quetzalcoutl Dev",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {
+      "android-icon-144": "android-icon-144.png",
+      "android-icon-192": "android-icon-192.png",
+      "android-icon-36": "android-icon-36.png",
+      "android-icon-48": "android-icon-48.png",
+      "android-icon-72": "android-icon-72.png",
+      "android-icon-96": "android-icon-96.png",
+      "android-windowSplashScreenAnimatedIcon": "android-windowSplashScreenAnimatedIcon.png",
+      "desktop-icon-512": "assets/desktopIcon.png",
+      "ios-icon-100": "ios-icon-100.png",
+      "ios-icon-1024": "ios-icon-1024.png",
+      "ios-icon-114": "ios-icon-114.png",
+      "ios-icon-120": "ios-icon-120.png",
+      "ios-icon-144": "ios-icon-144.png",
+      "ios-icon-152": "ios-icon-152.png",
+      "ios-icon-167": "ios-icon-167.png",
+      "ios-icon-180": "ios-icon-180.png",
+      "ios-icon-20": "ios-icon-20.png",
+      "ios-icon-29": "ios-icon-29.png",
+      "ios-icon-40": "ios-icon-40.png",
+      "ios-icon-50": "ios-icon-50.png",
+      "ios-icon-57": "ios-icon-57.png",
+      "ios-icon-58": "ios-icon-58.png",
+      "ios-icon-60": "ios-icon-60.png",
+      "ios-icon-72": "ios-icon-72.png",
+      "ios-icon-76": "ios-icon-76.png",
+      "ios-icon-80": "ios-icon-80.png",
+      "ios-icon-87": "ios-icon-87.png"
+    },
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "dark",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 2,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": false
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": false
+    },
+    "authorIds": [
+      "bLei6mp8FMXlGD75f0bd33VOBoL2"
+    ],
+    "authorUsernames": [
+      "QuetzalcoutlDev"
+    ],
+    "categories": [],
+    "playableDevices": [
+      "keyboard",
+      "mobile"
+    ],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "assets/sprite/kyoko/idle/kyoko_idle_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/idle/kyoko_idle_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/damage/kyoko_damage_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/damage/kyoko_damage_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/CameraObject.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/CameraObject.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/bubble_heart.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/bubble_heart.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/special/kyoko_special_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/special/kyoko_special_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/wall_textures_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/wall_textures_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/health/UI Heart_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/health/UI Heart_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/health/UI Heart_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/health/UI Heart_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/fonts/DotGothic16-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets/fonts/DotGothic16-Regular.ttf",
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/bar/bar_fill.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/bar/bar_fill.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/bar/bar_bg.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/bar/bar_bg.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ExplosionTexture-Smoke-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ExplosionTexture-Smoke-1.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Particles/76d83bbc056a46fdf9f8f8dd1096f3c76baacafcdf81d728ced6ddaced2da9a8_ExplosionTexture-Smoke-1.png",
+          "name": "ExplosionTexture-Smoke-1.png"
+        }
+      },
+      {
+        "file": "assets/textures/sky.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/sky.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/clouds.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/clouds.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/textbox.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/textbox.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/ctc.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/ctc.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/text_typing.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/text_typing.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "disablePreload": false,
+        "file": "dialogs/dialogTest.json",
+        "kind": "json",
+        "metadata": "",
+        "name": "dialogs/dialogTest.json",
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/city.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/city.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/bush_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/bush_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/bush_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/bush_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/black.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/black.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/shoot/kyoko_shoot_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/shoot/kyoko_shoot_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/pause/pause_button_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/pause/pause_button_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/pause/pause_button_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/pause/pause_button_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/pause/pause_button_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/pause/pause_button_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/joystick/joystick thumb.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/joystick/joystick thumb.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/joystick/joystick border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/joystick/joystick border.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/shoot_button/shoot_button_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/shoot_button/shoot_button_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/shoot_button/shoot_button_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/shoot_button/shoot_button_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/shoot_button/shoot_button_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/shoot_button/shoot_button_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/shoot_button/special_button_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/shoot_button/special_button_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/shoot_button/special_button_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/shoot_button/special_button_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/shoot_button/special_button_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/shoot_button/special_button_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/textures/lights.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/textures/lights.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/other.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/other.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/other_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/other_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/death/kyoko_death_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/death/kyoko_death_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/button_box_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/button_box_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/button_box_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/button_box_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/button_box_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/button_box_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/idle/kyoko_idle_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/idle/kyoko_idle_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/objects_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/objects_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/objects_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/objects_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/objects_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/objects_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/objects_0004.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/objects_0004.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/objects_2_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/objects_2_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/objects_2_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/objects_2_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/powerUp.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/powerUp.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/EnemyDamage.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/EnemyDamage.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/SpecialShoot.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/SpecialShoot.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/Shoot.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/Shoot.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/KyokoHit.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/KyokoHit.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/SpecialRecharge.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/SpecialRecharge.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/objects/objects_0005.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/objects/objects_0005.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/shoot/kyoko_shoot_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/shoot/kyoko_shoot_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/special/kyoko_special_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/special/kyoko_special_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/death/kyoko_death_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/death/kyoko_death_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/death/kyoko_death_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/death/kyoko_death_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/kyoko/death/kyoko_death_0004.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/kyoko/death/kyoko_death_0004.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/slime/slime_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/slime/slime_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/slime/slime_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/slime/slime_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/eye/eye_0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/eye/eye_0001.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/eye/eye_0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/eye/eye_0002.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/eye/eye_0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/eye/eye_0003.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/eye/eye_0004.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/eye/eye_0004.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/eye/fire.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/eye/fire.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/other_4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/other_4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/other_5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/other_5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/Fire.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/Fire.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprite/robot/robot.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sprite/robot/robot.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/enemy_death.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/enemy_death.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "disablePreload": false,
+        "file": "dialogs/start.json",
+        "kind": "json",
+        "metadata": "{\"localFilePath\":\"dialogs/start.json\",\"extension\":\".json\"}",
+        "name": "dialogs/start.json",
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/logo.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/logo.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/QuetzalLogo.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/QuetzalLogo.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/logos/ggj.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/logos/ggj.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/logos/mermelada.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/logos/mermelada.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/IamQuetzalcoutl.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/IamQuetzalcoutl.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/menuBG.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/menuBG.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/menuBG_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/menuBG_2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "disablePreload": false,
+        "file": "dialogs/start_eng.json",
+        "kind": "json",
+        "metadata": "{\"localFilePath\":\"dialogs/start_eng.json\",\"extension\":\".json\"}",
+        "name": "dialogs/start_eng.json",
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/quetzalIcon.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/quetzalIcon.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/thumb_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/thumb_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/bar_border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/bar_border.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/bar_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/bar_1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/toogle_1_off.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/toogle_1_off.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/gui/toogle_1_on.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gui/toogle_1_on.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/menuTheme.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/menuTheme.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/gameTheme.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/gameTheme.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sounds/LoseSound.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "assets/sounds/LoseSound.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/desktop-icon-512.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/desktop-icon-512.png\"}",
+        "name": "desktop-icon-512.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/android-icon-192.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/android-icon-192.png\"}",
+        "name": "android-icon-192.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/android-icon-144.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/android-icon-144.png\"}",
+        "name": "android-icon-144.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/android-icon-96.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/android-icon-96.png\"}",
+        "name": "android-icon-96.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/android-icon-72.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/android-icon-72.png\"}",
+        "name": "android-icon-72.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/android-icon-48.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/android-icon-48.png\"}",
+        "name": "android-icon-48.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/android-icon-36.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/android-icon-36.png\"}",
+        "name": "android-icon-36.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/android-windowSplashScreenAnimatedIcon.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/android-windowSplashScreenAnimatedIcon.png\"}",
+        "name": "android-windowSplashScreenAnimatedIcon.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-1024.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-1024.png\"}",
+        "name": "ios-icon-1024.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-180.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-180.png\"}",
+        "name": "ios-icon-180.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-167.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-167.png\"}",
+        "name": "ios-icon-167.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-152.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-152.png\"}",
+        "name": "ios-icon-152.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-144.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-144.png\"}",
+        "name": "ios-icon-144.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-120.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-120.png\"}",
+        "name": "ios-icon-120.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-114.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-114.png\"}",
+        "name": "ios-icon-114.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-100.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-100.png\"}",
+        "name": "ios-icon-100.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-87.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-87.png\"}",
+        "name": "ios-icon-87.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-80.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-80.png\"}",
+        "name": "ios-icon-80.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-76.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-76.png\"}",
+        "name": "ios-icon-76.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-72.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-72.png\"}",
+        "name": "ios-icon-72.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-60.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-60.png\"}",
+        "name": "ios-icon-60.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-58.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-58.png\"}",
+        "name": "ios-icon-58.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-57.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-57.png\"}",
+        "name": "ios-icon-57.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-50.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-50.png\"}",
+        "name": "ios-icon-50.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-40.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-40.png\"}",
+        "name": "ios-icon-40.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-29.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-29.png\"}",
+        "name": "ios-icon-29.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/ios-icon-20.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"localFilePath\":\"./assets/ios-icon-20.png\"}",
+        "name": "ios-icon-20.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/desktopIcon.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/desktopIcon.png",
+        "smoothed": false,
+        "userAdded": false
+      }
+    ],
+    "resourceFolders": []
+  },
+  "objects": [
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "fps",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "FPSDisplayer",
+          "type": "FPS::FPSDisplayer",
+          "Text": "Text",
+          "prefix": "FPS: ",
+          "DecimalDigits": 0
+        }
+      ],
+      "string": "FPS: 0",
+      "font": "assets/fonts/DotGothic16-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 20,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": true,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "36;15;41",
+        "outlineThickness": 3,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "FPS: 0",
+        "font": "assets/fonts/DotGothic16-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "black",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets/gui/black.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 0
+                      },
+                      {
+                        "x": 64,
+                        "y": 64
+                      },
+                      {
+                        "x": 0,
+                        "y": 64
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "fps"
+      },
+      {
+        "objectName": "black"
+      }
+    ]
+  },
+  "objectsGroups": [],
+  "variables": [
+    {
+      "name": "game",
+      "type": "structure",
+      "children": [
+        {
+          "name": "ctc",
+          "type": "number",
+          "value": 5
+        },
+        {
+          "name": "fps",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "fullscreen",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "folded": true,
+          "name": "keyMap",
+          "type": "structure",
+          "children": [
+            {
+              "name": "move",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "down",
+                  "type": "string",
+                  "value": "Down"
+                },
+                {
+                  "name": "left",
+                  "type": "string",
+                  "value": "Left"
+                },
+                {
+                  "name": "right",
+                  "type": "string",
+                  "value": "Right"
+                },
+                {
+                  "name": "up",
+                  "type": "string",
+                  "value": "Up"
+                }
+              ]
+            },
+            {
+              "name": "nextDialog",
+              "type": "structure",
+              "children": [
+                {
+                  "name": "key",
+                  "type": "string",
+                  "value": "Return"
+                },
+                {
+                  "name": "mouse",
+                  "type": "string",
+                  "value": "Left"
+                }
+              ]
+            },
+            {
+              "name": "pause",
+              "type": "string",
+              "value": "Escape"
+            },
+            {
+              "name": "shoot",
+              "type": "string",
+              "value": "Space"
+            },
+            {
+              "name": "special",
+              "type": "string",
+              "value": "z"
+            }
+          ]
+        },
+        {
+          "name": "language",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "musicVolume",
+          "type": "number",
+          "value": 80
+        },
+        {
+          "name": "soundVolume",
+          "type": "number",
+          "value": 90
+        }
+      ]
+    },
+    {
+      "folded": true,
+      "name": "data",
+      "type": "structure",
+      "children": [
+        {
+          "name": "currentAct",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "highscore",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "history",
+          "type": "structure",
+          "children": [
+            {
+              "name": "start",
+              "type": "boolean",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "web_or_android_version",
+      "type": "boolean",
+      "value": true
+    },
+    {
+      "name": "score",
+      "type": "number",
+      "value": 0
+    }
+  ],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/init"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/loading"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/main_menu"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/game"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/pause"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/game_over"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/credits"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/config"
+    }
+  ],
+  "externalEvents": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/globals"
+    }
+  ],
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/gamepads"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/health"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/firebullet"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/smoothcamera"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/tiledunitsbar"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspritecontinuousbar"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/flash"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/fps"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspritebutton"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/spritemultitouchjoystick"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/onlyonceconditionforobject"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/getpropertiesdata"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspriteslider"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/spritetoggleswitch"
+    }
+  ],
+  "externalLayouts": []
+}

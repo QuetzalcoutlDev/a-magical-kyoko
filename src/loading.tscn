@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccbxuuullxo4n"]
+
+[ext_resource type="Script" uid="uid://curhj8vqkqrss" path="res://src/loading.gd" id="1_mo47n"]
+[ext_resource type="Texture2D" uid="uid://dcutqhyiph3o6" path="res://assets/gui/QuetzalLogo.png" id="2_xmr42"]
+[ext_resource type="Texture2D" uid="uid://c6dkjn2gi5sjc" path="res://assets/gui/logos/ggj.png" id="3_jv44n"]
+[ext_resource type="Texture2D" uid="uid://bck1we8ir3rly" path="res://assets/gui/logos/mermelada.png" id="4_a5xit"]
+[ext_resource type="FontFile" uid="uid://dcrb4to3x8ux6" path="res://assets/fonts/DotGothic16-Regular.ttf" id="5_uy5uh"]
+[ext_resource type="AudioStream" uid="uid://c4qnglm2jxcsj" path="res://assets/sounds/IamQuetzalcoutl.ogg" id="6_0uaoj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vaff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xmr42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ixjhh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jv44n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ed0jp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a5xit")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="loading" type="Node2D"]
+script = ExtResource("1_mo47n")
+
+[node name="logos" type="Node2D" parent="."]
+
+[node name="1" type="AnimatedSprite2D" parent="logos"]
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_3vaff")
+centered = false
+
+[node name="2" type="AnimatedSprite2D" parent="logos"]
+texture_filter = 2
+position = Vector2(364, 522)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_ixjhh")
+centered = false
+
+[node name="3" type="AnimatedSprite2D" parent="logos"]
+texture_filter = 2
+position = Vector2(748, 571)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_ed0jp")
+
+[node name="txt" type="Label" parent="logos"]
+offset_top = 670.0
+offset_right = 1280.0
+offset_bottom = 700.0
+theme_override_fonts/font = ExtResource("5_uy5uh")
+theme_override_font_sizes/font_size = 20
+text = "loadingTXT"
+horizontal_alignment = 1
+
+[node name="pass" type="Timer" parent="."]
+autostart = true
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_0uaoj")
+bus = &"sounds"
+
+[connection signal="timeout" from="pass" to="." method="_on_pass_timeout"]

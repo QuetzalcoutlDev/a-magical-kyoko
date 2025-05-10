@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Bienvenido a \"A Magical Kyoko\", un juego simple para la Global Game Jam Mermelada Friki 2025.\nEres Kyoko, una chica que está como actriz en una serie de chicas mágicas.\nDispara burbujas para vencer a sus enemigos.\nUsa las teclas direccionales para moverte y la barra espaciadora para disparar burbujas.\nCuando la barra azul está llena, puedes usar el poder especial.\nAparecerán cada cierto tiempo unas burbujas con ciertos efectos especiales.\nY eso es todo, vence todos los enemigos que puedas...\nCada cierto tiempo comenzarán a aparecer más.\nSuerte.\n<<NoStart>> \n<<end>> end",
+		"position": {
+			"x": 260,
+			"y": 196
+		},
+		"colorID": 0
+	}
+]

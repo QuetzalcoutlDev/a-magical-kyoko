@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://diuvcmqcpsos5"]
+
+[ext_resource type="Texture2D" uid="uid://djnprl7bixrkw" path="res://assets/sprite/eye/eye_0001.png" id="1_rlexe"]
+[ext_resource type="Script" uid="uid://defaenjbg62so" path="res://src/enemys/eye.gd" id="1_s4eqa"]
+[ext_resource type="Texture2D" uid="uid://cg1j70rxm8wl5" path="res://assets/sprite/eye/eye_0002.png" id="2_mq0qi"]
+[ext_resource type="Texture2D" uid="uid://comci61f5prkn" path="res://assets/sprite/eye/eye_0003.png" id="3_cch6x"]
+[ext_resource type="Texture2D" uid="uid://dmu68llfvcn6k" path="res://assets/sprite/eye/eye_0004.png" id="4_krv60"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5e4vo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rlexe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mq0qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cch6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_krv60")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_422km"]
+radius = 32.0624
+
+[sub_resource type="Animation" id="Animation_yd5qf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("s:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ifdx"]
+resource_name = "damage"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("s:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tnayo"]
+_data = {
+&"RESET": SubResource("Animation_yd5qf"),
+&"damage": SubResource("Animation_8ifdx")
+}
+
+[node name="eye" type="Area2D" groups=["enemys"]]
+script = ExtResource("1_s4eqa")
+
+[node name="s" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_5e4vo")
+frame_progress = 0.49826
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-24, 20)
+shape = SubResource("CircleShape2D_422km")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="damageanim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tnayo")
+}
+
+[node name="explosion" type="Marker2D" parent="."]
+position = Vector2(-18, 18)
+
+[node name="startMove" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="PhaseChange" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Shoot" type="Timer" parent="."]
+wait_time = 1.4
+
+[node name="shootPos" type="Marker2D" parent="."]
+position = Vector2(-45, 27)
+
+[node name="change_dir" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="death" from="." to="." method="_on_death"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="damageanim" to="." method="_on_damageanim_animation_finished"]
+[connection signal="timeout" from="startMove" to="." method="_on_start_move_timeout"]
+[connection signal="timeout" from="PhaseChange" to="." method="_on_phase_change_timeout"]
+[connection signal="timeout" from="Shoot" to="." method="_on_shoot_timeout"]
+[connection signal="timeout" from="change_dir" to="." method="_on_change_dir_timeout"]

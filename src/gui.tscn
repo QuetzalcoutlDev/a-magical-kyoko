@@ -1,0 +1,141 @@
+[gd_scene load_steps=15 format=3 uid="uid://bdamqbyei1iyg"]
+
+[ext_resource type="Script" uid="uid://16gxvr0p6ngf" path="res://src/gui.gd" id="1_km7db"]
+[ext_resource type="Texture2D" uid="uid://n3hk65vku7a3" path="res://assets/gui/kyoko_icon.png" id="2_6ncr2"]
+[ext_resource type="Texture2D" uid="uid://p7e3umye16vr" path="res://assets/gui/life.png" id="3_rx12f"]
+[ext_resource type="Texture2D" uid="uid://bpnpywchhhtce" path="res://assets/gui/special.png" id="4_yq5nm"]
+[ext_resource type="Texture2D" uid="uid://l1bl0x72adbs" path="res://assets/gui/pause/pause_button_0001.png" id="5_t8pqp"]
+[ext_resource type="Texture2D" uid="uid://btrahgqombmmv" path="res://assets/gui/pause/pause_button_0003.png" id="6_hl74m"]
+[ext_resource type="Texture2D" uid="uid://d3tg1mborgebn" path="res://assets/gui/pause/pause_button_0002.png" id="7_a5kyi"]
+[ext_resource type="Texture2D" uid="uid://b48i3ccxqgibn" path="res://assets/gui/pause/pause_button_0004.png" id="8_s5cag"]
+[ext_resource type="Texture2D" uid="uid://qvlvtk7rooej" path="res://assets/gui/enemy_death.png" id="9_ejcq0"]
+[ext_resource type="FontFile" uid="uid://dcrb4to3x8ux6" path="res://assets/fonts/DotGothic16-Regular.ttf" id="10_lp0md"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwvu4"]
+bg_color = Color(0.73, 0.4088, 0.63364, 0.698039)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.86, 0.7568, 0.82904, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u7es"]
+bg_color = Color(0.86, 0.5848, 0.77744, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.612916, 0.35315, 0.544568, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4iuwi"]
+bg_color = Color(0.288, 0.3258, 0.45, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k52q3"]
+bg_color = Color(0.4465, 0.631117, 0.95, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2695, 0.427525, 0.49, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[node name="gui" type="CanvasLayer"]
+script = ExtResource("1_km7db")
+
+[node name="stats" type="CanvasLayer" parent="."]
+
+[node name="i" type="TextureRect" parent="stats"]
+offset_left = 5.0
+offset_top = 32.0
+offset_right = 89.0
+offset_bottom = 72.0
+texture = ExtResource("2_6ncr2")
+
+[node name="lifesBar" type="ProgressBar" parent="stats" groups=["life_bar"]]
+offset_left = 93.0
+offset_top = 32.0
+offset_right = 235.0
+offset_bottom = 48.0
+theme_override_styles/background = SubResource("StyleBoxFlat_uwvu4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6u7es")
+max_value = 4.0
+value = 2.0
+show_percentage = false
+
+[node name="specialBar" type="ProgressBar" parent="stats" groups=["special_bar"]]
+offset_left = 93.0
+offset_top = 52.0
+offset_right = 235.0
+offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4iuwi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k52q3")
+show_percentage = false
+
+[node name="lifeIcon" type="TextureRect" parent="stats"]
+offset_left = 238.0
+offset_top = 33.0
+offset_right = 252.0
+offset_bottom = 47.0
+texture = ExtResource("3_rx12f")
+
+[node name="specialicon" type="TextureRect" parent="stats"]
+offset_left = 238.0
+offset_top = 51.0
+offset_right = 253.0
+offset_bottom = 66.0
+texture = ExtResource("4_yq5nm")
+
+[node name="pause_button" type="TextureButton" parent="."]
+offset_left = 1236.0
+offset_top = 5.0
+offset_right = 1276.0
+offset_bottom = 45.0
+texture_normal = ExtResource("5_t8pqp")
+texture_pressed = ExtResource("6_hl74m")
+texture_hover = ExtResource("7_a5kyi")
+texture_disabled = ExtResource("8_s5cag")
+
+[node name="enemys_death" type="TextureRect" parent="."]
+offset_left = 1235.0
+offset_top = 57.0
+offset_right = 1275.0
+offset_bottom = 97.0
+texture = ExtResource("9_ejcq0")
+
+[node name="score" type="Label" parent="."]
+offset_left = 941.0
+offset_top = 55.0
+offset_right = 1226.0
+offset_bottom = 99.0
+theme_override_colors/font_outline_color = Color(0.200284, 0.00740009, 0.226933, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("10_lp0md")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
+
+[connection signal="value_changed" from="stats/lifesBar" to="." method="_on_lifes_bar_value_changed"]
+[connection signal="pressed" from="pause_button" to="." method="_on_pause_button_pressed"]

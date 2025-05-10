@@ -1,0 +1,147 @@
+[gd_scene load_steps=16 format=3 uid="uid://cjuhcplxxivn8"]
+
+[ext_resource type="Texture2D" uid="uid://b1l6db33ejis" path="res://assets/gui/menuBG_2.png" id="1_i43mk"]
+[ext_resource type="Script" uid="uid://7nj556dcwf51" path="res://src/credits.gd" id="1_ifpyw"]
+[ext_resource type="FontFile" uid="uid://dcrb4to3x8ux6" path="res://assets/fonts/DotGothic16-Regular.ttf" id="3_s1o6u"]
+[ext_resource type="Shader" uid="uid://crtpvb2nbb5i8" path="res://src/shaders/shadow.gdshader" id="4_2n2er"]
+[ext_resource type="Texture2D" uid="uid://dr23sdf7wjy1x" path="res://assets/gui/quetzalIcon.png" id="4_a63pa"]
+[ext_resource type="Texture2D" uid="uid://ct4iywkxca7jn" path="res://assets/gui/logo.png" id="6_wy7ox"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ctr23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i43mk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2x15r"]
+bg_color = Color(0.63, 0.63, 0.63, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5l73"]
+bg_color = Color(0.603922, 0.427451, 0.627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkaou"]
+bg_color = Color(0.411765, 0.235294, 0.439216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_552ls"]
+bg_color = Color(0.513726, 0.294118, 0.545098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ukulj"]
+shader = ExtResource("4_2n2er")
+shader_parameter/drop_shadow_color = Color(0, 0, 0, 0.639216)
+shader_parameter/shadow_offset = Vector2(0, 0.01)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ip5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a63pa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27c01"]
+shader = ExtResource("4_2n2er")
+shader_parameter/drop_shadow_color = Color(0, 0, 0, 0.188235)
+shader_parameter/shadow_offset = Vector2(0, 0.1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2v8c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wy7ox")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="credits" type="Node2D"]
+script = ExtResource("1_ifpyw")
+
+[node name="bg" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ctr23")
+centered = false
+
+[node name="back" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 640.0
+offset_right = 317.0
+offset_bottom = 697.0
+theme_override_colors/font_outline_color = Color(0.189481, 0.134011, 0.284702, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_s1o6u")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2x15r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d5l73")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tkaou")
+theme_override_styles/normal = SubResource("StyleBoxFlat_552ls")
+text = "backButton"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ukulj")
+position = Vector2(1101, 601)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_7ip5p")
+
+[node name="txt" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 248.0
+offset_right = 1201.0
+offset_bottom = 485.0
+theme_override_colors/font_outline_color = Color(0.13589, 0.0265736, 0.14699, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_s1o6u")
+theme_override_font_sizes/font_size = 25
+text = "creditsTXT"
+
+[node name="logo" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_27c01")
+position = Vector2(252, 56)
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_a2v8c")
+centered = false
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

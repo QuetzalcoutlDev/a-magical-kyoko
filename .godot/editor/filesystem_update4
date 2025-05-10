@@ -1,0 +1,9 @@
+res://src/shaders.tscn
+res://src/dialogs/textbox_style.tres
+res://src/shaders/CRT.gdshader
+res://src/shaders/gradient.gdshader
+res://src/shaders/fire.gdshader
+res://src/shaders/shadow.gdshader
+res://src/game.tscn
+res://src/pause.tscn
+res://src/gui.tscn

@@ -1,0 +1,63 @@
+[gd_scene load_steps=13 format=3 uid="uid://bquhymwqh24gq"]
+
+[ext_resource type="Script" uid="uid://dpryf5s5lqbv0" path="res://src/enemys/eye_fire_explosion.gd" id="1_p5s5g"]
+[ext_resource type="Texture2D" uid="uid://bqyvn8dnyjhds" path="res://assets/effects/eye_fire/eye_fire_0001.png" id="2_ygirs"]
+[ext_resource type="Texture2D" uid="uid://r4e10g4cf2jb" path="res://assets/effects/eye_fire/eye_fire_0002.png" id="3_ufdpr"]
+[ext_resource type="Texture2D" uid="uid://bqi5n3ol5dpkk" path="res://assets/effects/eye_fire/eye_fire_0003.png" id="4_3y8aa"]
+[ext_resource type="Texture2D" uid="uid://ym3pv6eju1v2" path="res://assets/effects/eye_fire/eye_fire_0004.png" id="5_8adh7"]
+[ext_resource type="Texture2D" uid="uid://og54g85kjxo6" path="res://assets/effects/eye_fire/eye_fire_0005.png" id="6_xppkt"]
+[ext_resource type="Texture2D" uid="uid://dyhbp6ewf023u" path="res://assets/effects/eye_fire/eye_fire_0006.png" id="7_kb1r8"]
+[ext_resource type="Texture2D" uid="uid://nogu5ld5phuj" path="res://assets/effects/eye_fire/eye_fire_0007.png" id="8_vpsu6"]
+[ext_resource type="Texture2D" uid="uid://bpws4jjax3x2y" path="res://assets/effects/eye_fire/eye_fire_0008.png" id="9_wmnsh"]
+[ext_resource type="Texture2D" uid="uid://crsoujxc1iecp" path="res://assets/effects/eye_fire/eye_fire_0009.png" id="10_8nlj4"]
+[ext_resource type="AudioStream" uid="uid://b08o004csn0ci" path="res://assets/sounds/Fire.wav" id="11_qi2bh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcul1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ygirs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ufdpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3y8aa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8adh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xppkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kb1r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vpsu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wmnsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8nlj4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="eye_fire_explosion" type="Node2D"]
+script = ExtResource("1_p5s5g")
+
+[node name="s" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jcul1")
+frame = 8
+frame_progress = 1.0
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_qi2bh")
+autoplay = true
+bus = &"sounds"
+
+[connection signal="animation_finished" from="s" to="." method="_on_s_animation_finished"]

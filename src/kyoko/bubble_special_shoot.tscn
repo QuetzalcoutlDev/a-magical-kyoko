@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs4ucy0i2b0di"]
+
+[ext_resource type="Texture2D" uid="uid://dk6swso4rds16" path="res://assets/sprite/kyoko/bubble_heart.png" id="1_6gqxn"]
+[ext_resource type="Script" uid="uid://daqns0wuhxra3" path="res://src/kyoko/bubble_special_shoot.gd" id="1_76k5d"]
+[ext_resource type="Shader" uid="uid://gbrxqbavo3r3" path="res://src/shaders/blur.gdshader" id="2_owtou"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8s4vj"]
+shader = ExtResource("2_owtou")
+shader_parameter/strength = 1.499
+shader_parameter/sample_power = 4
+shader_parameter/is_canvas_group = false
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xw1of"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6gqxn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0w2u8"]
+radius = 92.0489
+
+[node name="BubbleSpecialShoot" type="Area2D" groups=["special_shoot"]]
+script = ExtResource("1_76k5d")
+
+[node name="s" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_8s4vj")
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xw1of")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0w2u8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,75 @@
+[gd_scene load_steps=16 format=3 uid="uid://do4rgsnkc4jf4"]
+
+[ext_resource type="Script" uid="uid://nb1iqmlut4wn" path="res://src/kyoko/heart_shoot.gd" id="1_vi5hb"]
+[ext_resource type="Texture2D" uid="uid://cpsjjus2rw7ah" path="res://assets/effects/heart_shoot/heart_shoot_0001.png" id="2_4x5h5"]
+[ext_resource type="Texture2D" uid="uid://b0ybdk5i0nmov" path="res://assets/effects/heart_shoot/heart_shoot_0002.png" id="3_7gge0"]
+[ext_resource type="Texture2D" uid="uid://ch4r1ja0pjgay" path="res://assets/effects/heart_shoot/heart_shoot_0003.png" id="4_egr43"]
+[ext_resource type="Texture2D" uid="uid://hfcc3658g7o" path="res://assets/effects/heart_shoot/heart_shoot_0004.png" id="5_83crr"]
+[ext_resource type="Texture2D" uid="uid://c10uetw64bh7i" path="res://assets/effects/heart_shoot/heart_shoot_0005.png" id="6_kvirn"]
+[ext_resource type="Texture2D" uid="uid://caf2txirs74y4" path="res://assets/effects/heart_shoot/heart_shoot_0006.png" id="7_pimaw"]
+[ext_resource type="Texture2D" uid="uid://c23hnj4sorlpl" path="res://assets/effects/heart_shoot/heart_shoot_0007.png" id="8_bgqub"]
+[ext_resource type="Texture2D" uid="uid://iykt5ajk2m0m" path="res://assets/effects/heart_shoot/heart_shoot_0008.png" id="9_pwrlo"]
+[ext_resource type="Texture2D" uid="uid://cvo8jil3yem1k" path="res://assets/effects/heart_shoot/heart_shoot_0009.png" id="10_g7fi3"]
+[ext_resource type="Texture2D" uid="uid://dym145kpcki18" path="res://assets/effects/heart_shoot/heart_shoot_0010.png" id="11_fvhbh"]
+[ext_resource type="Texture2D" uid="uid://dg5wcfjcecrlg" path="res://assets/effects/heart_shoot/heart_shoot_0011.png" id="12_teu3c"]
+[ext_resource type="Texture2D" uid="uid://cmx3v5hwrxond" path="res://assets/effects/heart_shoot/heart_shoot_0012.png" id="13_jm2nk"]
+[ext_resource type="AudioStream" uid="uid://dddsvuw1jdhhw" path="res://assets/sounds/Shoot.wav" id="14_oyirx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7bim"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4x5h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7gge0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_egr43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_83crr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvirn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pimaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bgqub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pwrlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g7fi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fvhbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_teu3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jm2nk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="heart_shoot" type="Node2D"]
+script = ExtResource("1_vi5hb")
+
+[node name="s" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p7bim")
+frame = 11
+frame_progress = 1.0
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_oyirx")
+autoplay = true
+bus = &"sounds"
+
+[connection signal="animation_finished" from="s" to="." method="_on_s_animation_finished"]

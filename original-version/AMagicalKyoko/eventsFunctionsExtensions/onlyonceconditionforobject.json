@@ -1,0 +1,310 @@
+{
+  "author": "",
+  "category": "",
+  "extensionNamespace": "",
+  "fullName": "Only Once Condition for Object",
+  "helpPath": "https://github.com/PANDAKO-GitHub/OnlyOnceConditionForObject",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXJlcGVhdC1vbmNlIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEzLDE1VjlIMTJMMTAsMTBWMTFIMTEuNVYxNU0xNywxN0g3VjE0TDMsMThMNywyMlYxOUgxOVYxM0gxN003LDdIMTdWMTBMMjEsNkwxNywyVjVINVYxMUg3VjdaIiAvPjwvc3ZnPg==",
+  "name": "OnlyOnceConditionForObject",
+  "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/repeat-once.svg",
+  "shortDescription": "This behavior adds a \"Only once\" condition to the object (instance).",
+  "version": "1.0.0",
+  "description": [
+    "Adding the \"Only Once Condition\" behavior to an object will add the \"Only Once\" condition to the instance.",
+    "The condition will be identified by the condition name and will be executed only once."
+  ],
+  "tags": [
+    "once",
+    "object",
+    "variable",
+    "instance"
+  ],
+  "authorIds": [
+    "Zu55H5hcb9YmZTltIVOTAFDJQyB2"
+  ],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "description": "Log a message to the console.\nThis condition always returns True.",
+      "fullName": "Log a message to the console",
+      "functionType": "Condition",
+      "name": "LogMessageToConsole",
+      "sentence": "Log message _PARAM1_ to the console",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "DebuggerTools::ConsoleLog"
+              },
+              "parameters": [
+                "GetArgumentAsString(\"MessageToLog\")",
+                "\"info\"",
+                "\"Once Extension\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetReturnBoolean"
+              },
+              "parameters": [
+                "True"
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "description": "Message to log",
+          "name": "MessageToLog",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": [
+    {
+      "description": "Adds a condition to the object that will be executed only once.",
+      "fullName": "Only Once Condition",
+      "name": "OnlyOnceCondition",
+      "objectType": "",
+      "eventsFunctions": [
+        {
+          "description": "The condition name of this instance was checked for the first time.\nUnlike the \"Trigger once while true\" condition, this condition stays true until reset.",
+          "fullName": "Only once",
+          "functionType": "Condition",
+          "name": "OnlyOnce",
+          "sentence": "The _PARAM2_ condition of _PARAM0_ is only once.",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ObjectVariableChildExists"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension",
+                    "GetArgumentAsString(\"EventName\")"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension[GetArgumentAsString(\"EventName\")]",
+                    "False"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "ObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension[GetArgumentAsString(\"EventName\")]",
+                    "True"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "False"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "ObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension[GetArgumentAsString(\"EventName\")]",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension[GetArgumentAsString(\"EventName\")]",
+                    "True"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "OnlyOnceConditionForObject::OnlyOnceCondition",
+              "type": "behavior"
+            },
+            {
+              "description": "Condition Name",
+              "name": "EventName",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Reset the condition of the Condition Name parameter.",
+          "fullName": "Reset Event",
+          "functionType": "Action",
+          "name": "Reset",
+          "sentence": "Reset the _PARAM2_ condition of _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ObjectVariableChildExists"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension",
+                    "GetArgumentAsString(\"EventName\")"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension[GetArgumentAsString(\"EventName\")]",
+                    "False"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension[GetArgumentAsString(\"EventName\")]",
+                    "False"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "OnlyOnceConditionForObject::OnlyOnceCondition",
+              "type": "behavior"
+            },
+            {
+              "description": "Condition Name",
+              "name": "EventName",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Reset all conditions of instance.",
+          "fullName": "Reset All Conditions",
+          "functionType": "Action",
+          "name": "ResetAll",
+          "sentence": "Reset all conditions of _PARAM0_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ObjectVariableClearChildren"
+                  },
+                  "parameters": [
+                    "Object",
+                    "__OnceExtension"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "object"
+            },
+            {
+              "description": "Behavior",
+              "name": "Behavior",
+              "supplementaryInformation": "OnlyOnceConditionForObject::OnlyOnceCondition",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "propertyDescriptors": [],
+      "sharedPropertyDescriptors": []
+    }
+  ],
+  "eventsBasedObjects": []
+}

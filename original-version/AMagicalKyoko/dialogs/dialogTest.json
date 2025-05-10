@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Esto es una prueba de texto\nLos dialogos en está prueba no tienen ningún tipo de fin\n<<pause 1.0>> \nSe usa para probar los comandos\nAsi como el funcionamiento de las teclas\nEtc....\n<<pause 1.0>> \nEtc...\nEtc...\n<<end>> end",
+		"position": {
+			"x": 456,
+			"y": 284
+		},
+		"colorID": 0
+	}
+]

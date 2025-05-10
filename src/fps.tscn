@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds8sj0a2h8cx7"]
+
+[ext_resource type="Script" uid="uid://d0j3shyxlh4yf" path="res://src/fps.gd" id="1_f8lo5"]
+[ext_resource type="FontFile" uid="uid://dcrb4to3x8ux6" path="res://assets/fonts/DotGothic16-Regular.ttf" id="1_k2p1m"]
+
+[node name="fps" type="CanvasLayer"]
+process_mode = 3
+layer = 5
+script = ExtResource("1_f8lo5")
+
+[node name="txt" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 68.0
+offset_bottom = 34.0
+theme_override_colors/font_outline_color = Color(0.265334, 0.00774349, 0.148613, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_k2p1m")
+theme_override_font_sizes/font_size = 18
+text = "FPS: 0"

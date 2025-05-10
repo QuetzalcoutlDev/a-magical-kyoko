@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bvu0dgeaufc16"
+
+[deps]
+
+files=["res://src/languages/dialogic_test_translation.es.translation"]
+
+source_file="res://src/languages/dialogic_test_translation.csv"
+dest_files=["res://src/languages/dialogic_test_translation.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

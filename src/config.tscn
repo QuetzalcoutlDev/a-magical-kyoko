@@ -1,0 +1,324 @@
+[gd_scene load_steps=12 format=3 uid="uid://u6bfiu4gvlp"]
+
+[ext_resource type="Texture2D" uid="uid://b1l6db33ejis" path="res://assets/gui/menuBG_2.png" id="1_a2rmh"]
+[ext_resource type="Script" uid="uid://b85i0a1rw73n4" path="res://src/config.gd" id="1_xls5o"]
+[ext_resource type="FontFile" uid="uid://dcrb4to3x8ux6" path="res://assets/fonts/DotGothic16-Regular.ttf" id="2_uxb8x"]
+[ext_resource type="PackedScene" uid="uid://b82n7o1m43l4b" path="res://src/volume_slider.tscn" id="4_sxt2x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_763ba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a2rmh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycay3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkl8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jcra"]
+bg_color = Color(0.63, 0.63, 0.63, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb5w8"]
+bg_color = Color(0.603922, 0.427451, 0.627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbscb"]
+bg_color = Color(0.411765, 0.235294, 0.439216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lx52v"]
+bg_color = Color(0.513726, 0.294118, 0.545098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="config" type="Node2D"]
+script = ExtResource("1_xls5o")
+
+[node name="bg" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_763ba")
+centered = false
+
+[node name="game_over_txt" type="Label" parent="."]
+offset_top = 4.0
+offset_right = 1280.0
+offset_bottom = 83.0
+theme_override_colors/font_outline_color = Color(0.248235, 0.0652421, 0.323694, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 51
+text = "configTitleTXT"
+horizontal_alignment = 1
+
+[node name="SC" type="ScrollContainer" parent="."]
+offset_left = 72.0
+offset_top = 90.0
+offset_right = 1214.0
+offset_bottom = 590.0
+
+[node name="e" type="VBoxContainer" parent="SC"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="fullscreen" type="HBoxContainer" parent="SC/e"]
+layout_mode = 2
+
+[node name="txt" type="Label" parent="SC/e/fullscreen"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.149283, 0.000977957, 0.143148, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 30
+text = "fullscreenTXT"
+
+[node name="hs" type="HSeparator" parent="SC/e/fullscreen"]
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="check" type="CheckButton" parent="SC/e/fullscreen"]
+layout_mode = 2
+
+[node name="vs1" type="VSeparator" parent="SC/e"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hkl8b")
+
+[node name="fps" type="HBoxContainer" parent="SC/e"]
+layout_mode = 2
+
+[node name="txt" type="Label" parent="SC/e/fps"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.149283, 0.000977957, 0.143148, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 30
+text = "FPSCounterTXT"
+
+[node name="hs" type="HSeparator" parent="SC/e/fps"]
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="check" type="CheckButton" parent="SC/e/fps"]
+layout_mode = 2
+button_pressed = true
+
+[node name="vs2" type="VSeparator" parent="SC/e"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hkl8b")
+
+[node name="music" type="HBoxContainer" parent="SC/e"]
+layout_mode = 2
+
+[node name="txt" type="Label" parent="SC/e/music"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.149283, 0.000977957, 0.143148, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 30
+text = "musicVolTXT"
+
+[node name="hs" type="HSeparator" parent="SC/e/music"]
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="s" parent="SC/e/music" instance=ExtResource("4_sxt2x")]
+layout_mode = 2
+bus_name = "music"
+
+[node name="vs3" type="VSeparator" parent="SC/e"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hkl8b")
+
+[node name="sound" type="HBoxContainer" parent="SC/e"]
+layout_mode = 2
+
+[node name="txt" type="Label" parent="SC/e/sound"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.149283, 0.000977957, 0.143148, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 30
+text = "soundVolTXT"
+
+[node name="hs" type="HSeparator" parent="SC/e/sound"]
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="s" parent="SC/e/sound" instance=ExtResource("4_sxt2x")]
+layout_mode = 2
+bus_name = "sounds"
+
+[node name="vs4" type="VSeparator" parent="SC/e"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hkl8b")
+
+[node name="ctc" type="HBoxContainer" parent="SC/e"]
+visible = false
+layout_mode = 2
+
+[node name="txt" type="Label" parent="SC/e/ctc"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.149283, 0.000977957, 0.143148, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 30
+text = "Velocidad del texto"
+
+[node name="hs" type="HSeparator" parent="SC/e/ctc"]
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="s" type="HSlider" parent="SC/e/ctc"]
+custom_minimum_size = Vector2(350, 39)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+
+[node name="vs5" type="VSeparator" parent="SC/e"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hkl8b")
+
+[node name="languages" type="HBoxContainer" parent="SC/e"]
+layout_mode = 2
+
+[node name="txt" type="Label" parent="SC/e/languages"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.149283, 0.000977957, 0.143148, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 30
+text = "languageTXT"
+
+[node name="hs" type="HSeparator" parent="SC/e/languages"]
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="m" type="MenuBar" parent="SC/e/languages"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name=">>>>>>>" type="PopupMenu" parent="SC/e/languages/m"]
+title = "Seleccionar"
+size = Vector2i(153, 100)
+item_count = 2
+item_0/text = "Español"
+item_1/text = "English"
+item_1/id = 1
+
+[node name="buttons" type="HBoxContainer" parent="."]
+offset_left = 16.0
+offset_top = 593.0
+offset_right = 1261.0
+offset_bottom = 709.0
+
+[node name="back" type="Button" parent="buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0.189481, 0.134011, 0.284702, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7jcra")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eb5w8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbscb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lx52v")
+text = "backButton"
+
+[node name="hs" type="HSeparator" parent="buttons"]
+visible = false
+custom_minimum_size = Vector2(616, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="hs2" type="HSeparator" parent="buttons"]
+custom_minimum_size = Vector2(1027, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ycay3")
+
+[node name="b" type="VBoxContainer" parent="buttons"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="gamepad" type="Button" parent="buttons/b"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.189481, 0.134011, 0.284702, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7jcra")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eb5w8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbscb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lx52v")
+text = "Configurar el mando"
+
+[node name="vs1" type="VSeparator" parent="buttons/b"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_hkl8b")
+
+[node name="keymap" type="Button" parent="buttons/b"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0.189481, 0.134011, 0.284702, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_uxb8x")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7jcra")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eb5w8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbscb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lx52v")
+text = "Configurar el teclado"
+
+[connection signal="toggled" from="SC/e/fullscreen/check" to="." method="_on_full_screen_check_toggled"]
+[connection signal="toggled" from="SC/e/fps/check" to="." method="_on_fps_check_toggled"]
+[connection signal="index_pressed" from="SC/e/languages/m/>>>>>>>" to="." method="_on_language_popup__index_pressed"]
+[connection signal="pressed" from="buttons/back" to="." method="_on_back_pressed"]

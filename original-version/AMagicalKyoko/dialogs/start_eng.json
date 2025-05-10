@@ -1,0 +1,12 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Welcome to \"A Magical Kyoko\", a simple game for the Global Game Jam 2025.\nYou are Kyoko, a girl who is an actress in a magical girl series.\nShoot bubbles to defeat her enemies.\nUse the directional keys to move and the space bar to shoot bubbles.\nWhen the blue bar is full, you can use the special power.\nBubbles with certain special effects will appear from time to time.\nAnd that's it, defeat as many enemies as you can...\nEvery so often more will start to appear.\nGood luck.\n<<NoStart>>\n<<end>> end",
+		"position": {
+			"x": 260,
+			"y": 196
+		},
+		"colorID": 0
+	}
+]

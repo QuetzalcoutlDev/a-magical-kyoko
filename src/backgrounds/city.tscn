@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://wrxaof0i36v8"]
+
+[ext_resource type="Texture2D" uid="uid://t1u1pv7vk0x4" path="res://assets/textures/sky.png" id="1_a2t5t"]
+[ext_resource type="Script" uid="uid://diiah4lkatufp" path="res://src/backgrounds/city.gd" id="1_oxh46"]
+[ext_resource type="Texture2D" uid="uid://cq6d140ybp0f2" path="res://assets/textures/city_3.png" id="2_aqn2j"]
+[ext_resource type="Texture2D" uid="uid://blmv1ja1cqxqy" path="res://assets/textures/city_2.png" id="3_evoq3"]
+[ext_resource type="Texture2D" uid="uid://bx2mt2hbsswev" path="res://assets/textures/city.png" id="4_1480c"]
+[ext_resource type="Texture2D" uid="uid://dwglygmbmh0x6" path="res://assets/textures/clouds.png" id="5_xnt6o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3if6r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a2t5t")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmhpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aqn2j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3et4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_evoq3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rx4gm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1480c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xnt6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ormg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xnt6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="city" type="Node2D"]
+script = ExtResource("1_oxh46")
+
+[node name="bg" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="AnimatedSprite2D" parent="bg"]
+sprite_frames = SubResource("SpriteFrames_3if6r")
+animation = &"1"
+centered = false
+
+[node name="city3" type="ParallaxBackground" parent="bg"]
+
+[node name="city3" type="ParallaxLayer" parent="bg/city3"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="s" type="AnimatedSprite2D" parent="bg/city3/city3"]
+position = Vector2(0, 408)
+sprite_frames = SubResource("SpriteFrames_mmhpf")
+centered = false
+
+[node name="city2" type="ParallaxBackground" parent="bg"]
+
+[node name="city" type="ParallaxLayer" parent="bg/city2"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="s" type="AnimatedSprite2D" parent="bg/city2/city"]
+position = Vector2(0, 424)
+sprite_frames = SubResource("SpriteFrames_e3et4")
+centered = false
+
+[node name="city" type="ParallaxBackground" parent="bg"]
+
+[node name="city" type="ParallaxLayer" parent="bg/city"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="s" type="AnimatedSprite2D" parent="bg/city/city"]
+position = Vector2(0, 453)
+sprite_frames = SubResource("SpriteFrames_rx4gm")
+centered = false
+
+[node name="clouds" type="ParallaxBackground" parent="bg"]
+
+[node name="clouds" type="ParallaxLayer" parent="bg/clouds"]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="s" type="AnimatedSprite2D" parent="bg/clouds/clouds"]
+position = Vector2(0, 80)
+sprite_frames = SubResource("SpriteFrames_ormg3")
+centered = false

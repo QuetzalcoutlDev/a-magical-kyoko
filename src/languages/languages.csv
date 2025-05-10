@@ -1,0 +1,32 @@
+﻿keys,es,en
+loadingTXT,Creado originalmente para la Global Game Jam 2025 Mermelada Friki,Originally created for the Global Game Jam 2025 Friki Jam
+startButton,Iniciar,Start
+configButton,Configuración,Settings
+creditsButton,Creditos,Credits
+exitButton,Salir,Exit
+configTitleTXT,Configuración,Settings
+fullscreenTXT,Pantalla completa,Fullscreen
+FPSCounterTXT,Contador FPS,FPS Counter
+musicVolTXT,Volumen de la música,Music Volume
+soundVolTXT,Volumen de los sonidos,Sound Volume
+languageTXT,Idioma,Language
+backButton,Regresar,Go back
+creditsTXT,"Creado por QuetzalcoutlDev
+
+Una versión rehecha de A Magical Kyoko en Godot, originalmente desarrollado en GDevelop 5 
+para la Global Game Jam  2025 Mermelada Friki 
+
+Ahora siendo esta vez una practica para aprender desarrollo de juegos en el motor Godot.","Created by QuetzalcoutlDev
+
+A remade version of A Magical Kyoko in Godot, originally developed in GDevelop 5
+for the Global Game Jam 2025 Mermelada Friki
+
+Now this time being a practice to learn game development in the Godot engine."
+gameOverTitle,Has perdido,You Lose
+tryAgainButton,Intentar de nuevo,Try again
+toMainMenuBtn,Regresar al menú,Return to menu
+pauseTitleTXT,Pausa,Pause
+pauseContinueBtn,Continuar,Continue
+pauseMenuBtn,Ir al menú,Go to main menu
+highscoreTXT,Maxima Puntuación: ,Highscore: 
+scoreTXT,Puntuación:,Score:

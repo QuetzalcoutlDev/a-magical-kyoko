@@ -1,0 +1,80 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnwnkcvd7hk7k"]
+
+[ext_resource type="Script" uid="uid://8bspfmsfi880" path="res://src/kyoko/heart_explosion_1.gd" id="1_ymxsp"]
+[ext_resource type="Texture2D" uid="uid://crm68d4ujpbba" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0001.png" id="2_aeb00"]
+[ext_resource type="Texture2D" uid="uid://dcgotr840vy2o" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0002.png" id="3_7mrh8"]
+[ext_resource type="Texture2D" uid="uid://rorf0681mbx6" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0003.png" id="4_ccgmu"]
+[ext_resource type="Texture2D" uid="uid://jd8djfgbc8n" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0004.png" id="5_1xg7n"]
+[ext_resource type="Texture2D" uid="uid://deqn2e653u2ww" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0005.png" id="6_nhgd5"]
+[ext_resource type="Texture2D" uid="uid://dm3fr7yeho6qc" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0006.png" id="7_ogygi"]
+[ext_resource type="Texture2D" uid="uid://c5sevpi7kyxbf" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0007.png" id="8_61l8h"]
+[ext_resource type="Texture2D" uid="uid://jkl42rdx76n8" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0008.png" id="9_3nqhp"]
+[ext_resource type="Texture2D" uid="uid://balpfncisfcbr" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0009.png" id="10_piqbh"]
+[ext_resource type="Texture2D" uid="uid://dpo3geyba2qqk" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0010.png" id="11_cl1ue"]
+[ext_resource type="Texture2D" uid="uid://ba4wqdjsu21rs" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0011.png" id="12_ap0v1"]
+[ext_resource type="Texture2D" uid="uid://cah3wb2mmk3rl" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0012.png" id="13_am6in"]
+[ext_resource type="Texture2D" uid="uid://du6sysi2cc8ou" path="res://assets/effects/heart_explosion_1/heart_explosion_1_0013.png" id="14_ursqp"]
+[ext_resource type="AudioStream" uid="uid://dhmutximuexvg" path="res://assets/sounds/EnemyDamage.wav" id="15_fsvkk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxxmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aeb00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7mrh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ccgmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1xg7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nhgd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ogygi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_61l8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3nqhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_piqbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cl1ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ap0v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_am6in")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ursqp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="heart_explosion_1" type="Node2D"]
+script = ExtResource("1_ymxsp")
+
+[node name="s" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bxxmd")
+frame = 12
+frame_progress = 1.0
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_fsvkk")
+autoplay = true
+bus = &"sounds"
+
+[connection signal="animation_finished" from="s" to="." method="_on_s_animation_finished"]
